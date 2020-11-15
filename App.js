@@ -13,8 +13,8 @@ const navigator = createStackNavigator(
   {
     initialRouteName: "Home",
     defaultNavigationOptions: {
-      title: "login",
-    },
+      title: "",
+    }
   }
 );
 

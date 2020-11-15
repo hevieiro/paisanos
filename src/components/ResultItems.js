@@ -6,7 +6,6 @@ import { not } from 'react-native-reanimated';
 const ResultItems = ({item}) => {
 
     return (
-        <View style={styles.principalContainer}>
             <View style={styles.viewContainer}>
                 <View style={styles.Container}>
                     <Image style={styles.images} source={{uri: item.image_url}}/>
@@ -30,7 +29,7 @@ const ResultItems = ({item}) => {
                                 <Image
                                     style={styles.tinyLogo}
                                     source={require('../public/heart.png')}/>
-                                <TouchableOpacity>                            
+                                <TouchableOpacity >                            
                                     <View style={styles.heart}><Text style={styles.heartText}>{item.likes}</Text></View>
                                 </TouchableOpacity>
                             </View>
@@ -38,14 +37,10 @@ const ResultItems = ({item}) => {
                     </View>
                 </View>
             </View>
-        </View>
     )
 }
 
 const styles = StyleSheet.create({
-    principalContainer:{
-        backgroundColor: "#f2f3f7"
-    },
     viewContainer:{
         width: 380,
         height: 350,

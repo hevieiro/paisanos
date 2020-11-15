@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, StyleSheet, TextInput, FlatList,  Button, SafeAreaView, ScrollView, TouchableOpacity} from 'react-native'
+import { View, Text, StyleSheet, TextInput, FlatList,  Button, SafeAreaView, ScrollView, TouchableOpacity, Image} from 'react-native'
 import axios from "axios";
 
 import ResultItems from '../components/ResultItems'
@@ -25,6 +25,20 @@ const Home = () => {
           horizontal={false}
           data={results}
           keyExtractor={(item) => item.id.toString()}
+          ListHeaderComponent={
+            <View style={styles.headerContainer}>
+              <TouchableOpacity>
+              <Image style={styles.arrowBackHeader}
+                source={require('../public/back.png')}
+          />
+              </TouchableOpacity>
+              <Text style={styles.titleHeader} >Nutricion</Text>
+              <Image
+            style={styles.girlLogo}
+            source={require('../public/girl.png')}
+          />
+            </View>
+          }
           ListFooterComponent={
             <TouchableOpacity>
               <View style={styles.viewButton}>
@@ -72,6 +86,30 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#ffffff",
     letterSpacing: 0.98
+  },
+  headerContainer:{
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 30,
+    marginTop: 55,
+    width: 380,
+    marginLeft: 17
+  },
+  girlLogo:{
+    height: 50,
+    width:50,
+    marginLeft: 95
+  },
+  titleHeader:{
+    width:89,
+    height: 28,
+    fontSize: 20,
+    marginLeft: 136
+  },
+  arrowBackHeader:{
+    width: 10,
+    height: 18
   }
 })
 

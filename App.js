@@ -13,11 +13,9 @@ const navigator = createStackNavigator(
   {
     initialRouteName: "Login",
     defaultNavigationOptions: {
-      title: "",
-    }
+      headerShown: false    }
   }
 );
 
-//googlear create stack navigator las propiedades
 
 export default createAppContainer(navigator);

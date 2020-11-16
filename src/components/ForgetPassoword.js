@@ -6,7 +6,7 @@ const ForgetPassword = () => {
             <TouchableOpacity>
                 <View style={styles.container}>
                     <Text style={styles.text}>
-                        olvide mi contraseña
+                        Olvide mi contraseña
                     </Text>
                 </View>
             </TouchableOpacity>

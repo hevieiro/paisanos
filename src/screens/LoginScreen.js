@@ -54,9 +54,10 @@ const styles = StyleSheet.create({
   viewContainer: {
     marginLeft: 17,
     width: 380,
-    height:805,
+    height:528,
     display: "flex",
-    alignItems: "center"
+    alignItems: "center",
+    paddingTop: 46
   },
   inputContainer: {
     height: 166,

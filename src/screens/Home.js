@@ -4,7 +4,7 @@ import axios from "axios";
 
 import ResultItems from '../components/ResultItems'
 
-const Home = () => {
+const Home = ({navigation}) => {
     const [results, setResults] = useState([])
 
     useEffect(() => { 
@@ -26,7 +26,7 @@ const Home = () => {
           keyExtractor={(item) => item.id.toString()}
           ListHeaderComponent={
             <View style={styles.headerContainer}>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => navigation.pop()}>
               <Image style={styles.arrowBackHeader}
                 source={require('../public/back.png')}
           />

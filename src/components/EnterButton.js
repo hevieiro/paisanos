@@ -3,15 +3,21 @@ import { View , Text , StyleSheet, TextInput, TouchableOpacity, Button} from 're
 
 const EnterButton = ({signIn}) => {
     return(
-        <TouchableOpacity onPress={() => {signIn(); console.log("axios executed")}}>        
-            <View style={styles.view} title="ingresar">
-                <Text style={styles.Text}>INGRESAR</Text>
-            </View>
-        </TouchableOpacity>
+        <View style={styles.viewContainer}>
+            <TouchableOpacity onPress={() => {signIn(); console.log("axios executed")}}>        
+                <View style={styles.view} title="ingresar">
+                    <Text style={styles.Text}>INGRESAR</Text>
+                </View>
+            </TouchableOpacity>
+        </View>
+
         )
 }
 
 const styles = StyleSheet.create({
+    viewContainer:{
+        paddingBottom: 13
+    },
     view:{
         height: 60,
         width: 380,

@@ -5,32 +5,36 @@ import { View , Text , StyleSheet, TextInput, TouchableOpacity, Image} from 'rea
 const InputForm = ({onNameChange, onPasswordChange, name, password}) => {
     return (
         <View style={styles.inputContainer}>
-          <Text style={styles.label}>Mail / Usuario</Text>
-          <TextInput
-              style={styles.inputOne}
-              placeholder="Search"
-              autoCapitalize="none"
-              autoCorrect={false}
-              value={name}
-              onChangeText={(newName) => onNameChange(newName)} 
-      />
-          <Text style={styles.label}>Contraseña</Text>
-          <View style={styles.viewPassword}>          
-            <TextInput 
-              style={styles.inputTwo}
-              placeholder="Search"
-              autoCapitalize="none"
-              autoCorrect={false}
-              value={password}
-              onChangeText={(newPassword) => onPasswordChange(newPassword)} 
-              secureTextEntry={true}
-          />
-          <TouchableOpacity  style={styles.Touchable}>
-          <Image
-            style={styles.tinyLogo}
-            source={require('../public/openEye.png')}
-          />
-          </TouchableOpacity>
+          <View style={styles.viewLabel}> 
+            <Text style={styles.label}>Mail / Usuario</Text>
+          </View>
+            <TextInput
+                style={styles.inputOne}
+                placeholder="nombre@mail.com"
+                autoCapitalize="none"
+                autoCorrect={false}
+                value={name}
+                onChangeText={(newName) => onNameChange(newName)} 
+            />
+          <View style={styles.viewLabelTwo}> 
+            <Text style={styles.labelTwo}>Contraseña</Text>
+          </View>
+            <View style={styles.viewPassword}>          
+              <TextInput 
+                style={styles.inputTwo}
+                placeholder="Search"
+                autoCapitalize="none"
+                autoCorrect={false}
+                value={password}
+                onChangeText={(newPassword) => onPasswordChange(newPassword)} 
+                secureTextEntry={true}
+            />
+            <TouchableOpacity  style={styles.Touchable}>
+              <Image
+                style={styles.tinyLogo}
+                source={require('../public/closedEye.png')}
+              />
+            </TouchableOpacity>
           </View>
         </View>
       );
@@ -40,7 +44,6 @@ const InputForm = ({onNameChange, onPasswordChange, name, password}) => {
 const styles = StyleSheet.create({
     inputContainer: {
       display:"flex",
-      marginLeft: 17,
       width: 380,
     },
     inputOne: {
@@ -49,6 +52,7 @@ const styles = StyleSheet.create({
       borderColor: "black",
       marginBottom: 15,
       width: "100%",
+      borderBottomColor: "#000000"
     },
     inputTwo:{
       fontSize: 18,
@@ -61,12 +65,31 @@ const styles = StyleSheet.create({
       justifyContent: "space-between",
       width: "100%",     
       borderBottomWidth: 1,
-      alignItems: "center"
+      borderBottomColor: "#000000",
+      alignItems: "center",
     },
     label: {
-      fontSize: 20,
-      marginBottom: 5,
-      marginLeft: 5,
+      fontSize: 16,
+      fontFamily: "Vollkorn-Medium"
+    },
+    labelTwo:{
+      fontSize: 16,
+      fontFamily: "Vollkorn-Medium"
+    },
+    viewLabel:{
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "flex-start",
+      height: 22,
+      alignItems: "center"
+    },
+    viewLabelTwo:{
+      marginTop: 6,
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "flex-start",
+      height: 22,
+      alignItems: "center"
     },
     tinyLogo:{
       borderWidth: 1,
@@ -80,12 +103,6 @@ const styles = StyleSheet.create({
       height: 15.5,
       marginRight:10,
     },
-    label:{
-      display: "flex",
-      flexDirection: "row",
-      justifyContent: "flex-start",
-      fontFamily: "Vollkorn-Medium"
-    }
   });
 
 

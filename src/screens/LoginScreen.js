@@ -4,6 +4,7 @@ import TitleLogin from '../components/TitleLogin'
 import InputForm from '../components/InputForm'
 import ForgetPassword from '../components/ForgetPassoword'
 import EnterButton from '../components/EnterButton'
+import HeaerLoging from '../components/HeaderLogin'
 import Home from './Home'
 
 import axios from "axios";
@@ -27,24 +28,41 @@ const LoginScreen = ({navigation}) => {
     
     return (
     <View>
-        <TitleLogin />
-        <InputForm            
-            name={name}
-            password={password}
-            onNameChange={(newName) => {
-            setName(newName)
-            }}           
-            onPasswordChange={(newPassword) => {
-            setPassword(newPassword)
-        }} 
-        />
-        <ForgetPassword />
-        <EnterButton signIn={() => {signIn()}}/>
+        <HeaerLoging />
+          <View style={styles.viewContainer}>
+            <TitleLogin />
+              <View style={styles.inputContainer}>
+                <InputForm
+                    name={name}
+                    password={password}
+                    onNameChange={(newName) => {
+                    setName(newName)
+                    }}           
+                    onPasswordChange={(newPassword) => {
+                    setPassword(newPassword)
+                }} 
+                />
+              </View>
+            <ForgetPassword />
+          <EnterButton signIn={() => {signIn()}}/>
+        </View>
     </View>
     )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  viewContainer: {
+    marginLeft: 17,
+    width: 380,
+    height:805,
+    display: "flex",
+    alignItems: "center"
+  },
+  inputContainer: {
+    height: 166,
+    width: 380
+  }
+})
 
 
 export default LoginScreen;

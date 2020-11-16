@@ -19,7 +19,8 @@ const styles = StyleSheet.create({
     },
     text: {
         width: 144,
-        height: 18,
+        height: 20,
+        fontFamily: "LexendDeca-Regular",
         textDecorationLine: "underline"
     }
 })

@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View , Text , StyleSheet, TextInput, TouchableOpacity, Image} from 'react-native'
 
 
 const InputForm = ({onNameChange, onPasswordChange, name, password}) => {
+
+  const [ input , setInput] = useState(false)
+
     return (
         <View style={styles.inputContainer}>
           <View style={styles.viewLabel}> 
@@ -19,22 +22,37 @@ const InputForm = ({onNameChange, onPasswordChange, name, password}) => {
           <View style={styles.viewLabelTwo}> 
             <Text style={styles.labelTwo}>Contraseña</Text>
           </View>
-            <View style={styles.viewPassword}>          
-              <TextInput 
+            <View style={styles.viewPassword}>
+              {!input ? <TextInput 
                 style={styles.inputTwo}
-                placeholder="Search"
+                placeholder="*********"
                 autoCapitalize="none"
                 autoCorrect={false}
                 value={password}
                 onChangeText={(newPassword) => onPasswordChange(newPassword)} 
                 secureTextEntry={true}
             />
-            <TouchableOpacity  style={styles.Touchable}>
-              <Image
-                style={styles.tinyLogo}
-                source={require('../public/closedEye.png')}
-              />
-            </TouchableOpacity>
+              :               <TextInput 
+              style={styles.inputTwo}
+              placeholder="Contraseña"
+              autoCapitalize="none"
+              autoCorrect={false}
+              value={password}
+              onChangeText={(newPassword) => onPasswordChange(newPassword)} 
+              secureTextEntry={false}
+          />}          
+          <View style={styles.viewEye}>
+            <TouchableOpacity onPress={() => setInput(!input)} style={styles.Touchable}>
+                {!input ? <Image
+                  style={styles.tinyLogoClosed}
+                  source={require('../public/closedEye.png')}
+                /> : <Image
+                style={styles.tinyLogoOpened}
+                source={require('../public/openEye.png')}
+              />}
+
+              </TouchableOpacity>
+          </View>
           </View>
         </View>
       );
@@ -91,7 +109,12 @@ const styles = StyleSheet.create({
       height: 22,
       alignItems: "center"
     },
-    tinyLogo:{
+    tinyLogoClosed:{
+      width: 22.7,
+      height: 16,
+      alignItems: "center",
+    },
+    tinyLogoOpened:{
       borderWidth: 1,
       width: 22.7,
       height: 15.5,
@@ -103,6 +126,8 @@ const styles = StyleSheet.create({
       height: 15.5,
       marginRight:10,
     },
+    viewEye: {
+    }
   });
 
 

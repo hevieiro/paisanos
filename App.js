@@ -18,4 +18,6 @@ const navigator = createStackNavigator(
   }
 );
 
+//googlear create stack navigator las propiedades
+
 export default createAppContainer(navigator);

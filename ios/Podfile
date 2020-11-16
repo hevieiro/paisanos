@@ -8,6 +8,8 @@ target 'newproyect' do
 
   use_react_native!(:path => config["reactNativePath"])
 
+  pod 'RNHourFormat', :path => '../node_modules/react-native-hour-format'
+
   target 'newproyectTests' do
     inherit! :complete
     # Pods for testing

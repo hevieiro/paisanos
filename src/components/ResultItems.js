@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native'
 
 
@@ -22,16 +22,16 @@ const ResultItems = ({item}) => {
                                 <View style={styles.footerLevel}><Text style={styles.leveTimeText}>{item.level.name}</Text></View>
                             </TouchableOpacity>
                             <TouchableOpacity>                           
-                                <View style={styles.footerHour}><Text style={styles.leveTimeText}>2:00hs</Text></View>
+                                <View style={styles.footerHour}><Text style={styles.leveTimeText}>asd</Text></View>
                             </TouchableOpacity>
                         </View>
                         <View style={styles.heartContainer}>
                             <View  style={styles.heartContainerTwo}>
-                                <TouchableOpacity>                               
-                                     <Image
-                                    style={styles.tinyLogo}
-                                    source={require('../public/heart.png')}/>
-                                </TouchableOpacity>
+                                <TouchableOpacity>                              
+                                    <Image
+                                        style={styles.tinyLogo}
+                                        source={require('../public/heart.png')}/>
+                                    </TouchableOpacity>
                                 <View style={styles.heart}><Text style={styles.heartText}>{item.likes}</Text></View>
                             </View>
                         </View>
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#eeece2"
+        backgroundColor: "#eeece2",
      },
      footerHour: {
          width: 50,    
@@ -170,8 +170,5 @@ const styles = StyleSheet.create({
 
 // ajustar el corazon
 // hacer responsive las imagenes
-// formatear horas minutos y segundo a horas
 
 export default ResultItems
-
-

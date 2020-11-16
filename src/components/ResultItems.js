@@ -1,7 +1,5 @@
-import React, { useState } from 'react'
-import { View, Text, StyleSheet, TextInput, FlatList,   Button, Image, TouchableOpacity} from 'react-native'
-import axios from "axios";
-import { not } from 'react-native-reanimated';
+import React from 'react'
+import { View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native'
 
 
 const ResultItems = ({item}) => {
@@ -29,12 +27,12 @@ const ResultItems = ({item}) => {
                         </View>
                         <View style={styles.heartContainer}>
                             <View  style={styles.heartContainerTwo}>
-                                <Image
+                                <TouchableOpacity>                               
+                                     <Image
                                     style={styles.tinyLogo}
                                     source={require('../public/heart.png')}/>
-                                <TouchableOpacity >                            
-                                    <View style={styles.heart}><Text style={styles.heartText}>{item.likes}</Text></View>
                                 </TouchableOpacity>
+                                <View style={styles.heart}><Text style={styles.heartText}>{item.likes}</Text></View>
                             </View>
                         </View>
                     </View>
@@ -172,6 +170,7 @@ const styles = StyleSheet.create({
 
 // ajustar el corazon
 // hacer responsive las imagenes
+// formatear horas minutos y segundo a horas
 
 export default ResultItems
 

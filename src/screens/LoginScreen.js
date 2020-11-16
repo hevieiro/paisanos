@@ -1,14 +1,12 @@
 import React, { useState } from 'react'
-import { View, Text, StyleSheet, TextInput} from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import TitleLogin from '../components/TitleLogin'
 import InputForm from '../components/InputForm'
 import ForgetPassword from '../components/ForgetPassoword'
 import EnterButton from '../components/EnterButton'
 import HeaerLoging from '../components/HeaderLogin'
-import Home from './Home'
 
 import axios from "axios";
-import { NavigationEvents } from 'react-navigation'
 
 const LoginScreen = ({navigation}) => {
     const [name, setName] = useState("")
@@ -64,6 +62,5 @@ const styles = StyleSheet.create({
     width: 380
   }
 })
-
 
 export default LoginScreen;

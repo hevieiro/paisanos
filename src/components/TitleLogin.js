@@ -1,6 +1,5 @@
 import React from 'react'
 import {View, Text, StyleSheet} from 'react-native'
-import { ceil } from 'react-native-reanimated'
 
 const TitleLogin = () => {
     return(
@@ -38,6 +37,5 @@ const styles = StyleSheet.create({
         fontFamily: "LexendDeca-Regular"
     }
 })
-
 
 export default TitleLogin;

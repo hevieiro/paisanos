@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, StyleSheet, TextInput, FlatList,  Button, SafeAreaView, ScrollView, TouchableOpacity, Image} from 'react-native'
+import { View, Text, StyleSheet, FlatList, TouchableOpacity, Image} from 'react-native'
 import axios from "axios";
 
 import ResultItems from '../components/ResultItems'
@@ -17,9 +17,7 @@ const Home = ({navigation}) => {
           });
     }, [])
 
-
     return(
-    <ScrollView style={styles.viewContainer}>
     <FlatList
           horizontal={false}
           data={results}
@@ -49,7 +47,6 @@ const Home = ({navigation}) => {
             <ResultItems item={item}  />
           )}
       />
-</ScrollView>  
     )
 }
 
@@ -113,7 +110,5 @@ const styles = StyleSheet.create({
   }
 })
 
-// borrar barra de navegacion
-// fuentes
 // achicar imagenes
 export default Home;

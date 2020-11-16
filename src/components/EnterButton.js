@@ -1,5 +1,5 @@
 import React from 'react'
-import { View , Text , StyleSheet, TextInput, TouchableOpacity, Button} from 'react-native'
+import { View , Text , StyleSheet, TouchableOpacity } from 'react-native'
 
 const EnterButton = ({signIn}) => {
     return(
@@ -10,8 +10,7 @@ const EnterButton = ({signIn}) => {
                 </View>
             </TouchableOpacity>
         </View>
-
-        )
+    )
 }
 
 const styles = StyleSheet.create({

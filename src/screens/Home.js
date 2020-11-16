@@ -11,7 +11,6 @@ const Home = () => {
         axios.get('https://vindu.paisanos.io/public-api/course')
           .then(response => {
             setResults(response.data)
-            setArray([response.data[0]])
           })
           .catch(function (error) {
             console.log(error, "AXIOS ERROR");
@@ -105,7 +104,8 @@ const styles = StyleSheet.create({
     width:89,
     height: 28,
     fontSize: 20,
-    marginLeft: 136
+    marginLeft: 136,
+    fontFamily: "Vollkorn-Medium"
   },
   arrowBackHeader:{
     width: 10,

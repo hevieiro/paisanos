@@ -3,12 +3,15 @@ import { View, Text, StyleSheet, TextInput, FlatList,   Button, Image, Touchable
 import axios from "axios";
 import { not } from 'react-native-reanimated';
 
+
 const ResultItems = ({item}) => {
 
     return (
             <View style={styles.viewContainer}>
                 <View style={styles.Container}>
-                    <Image style={styles.images} source={{uri: item.image_url}}/>
+                    <View style={styles.images}>                    
+                        <Image style={styles.images} source={{uri: item.image_url}}/>
+                    </View>
                     <View style={styles.category}> 
                         <Text style={styles.textCategory}>{item.category.name}</Text>
                     </View>
@@ -57,30 +60,32 @@ const styles = StyleSheet.create({
     images: {
         width: 364,
         height: 214,
-        borderRadius: 10,
+        borderRadius: 11,
         display: "flex",
         justifyContent: "center",
     },
     category:{
         borderWidth: 1,
+        paddingTop: 10
     },
     textCategory:{
-        marginTop: 10,
         fontSize: 12,
-        color: "#898989"
+        color: "#898989",
+        fontFamily: "LexendDeca-Regular"
     },
     title:{
         borderWidth: 1,
         paddingBottom: 8,
         paddingTop: 8,
-        width: 207,
+        width: 350,
         height: 29,
         display: "flex",
         justifyContent: "center",
     },
     textTitle:{
         fontSize: 21,
-        color: "#333333"
+        color: "#333333",
+        fontFamily: "Vollkorn-Medium"
     },
     footerContainer:{
         borderWidth: 1,
@@ -121,7 +126,8 @@ const styles = StyleSheet.create({
      },
      leveTimeText:{
         fontSize: 11,
-        color: "#9d7c08"
+        color: "#9d7c08",
+        fontFamily: "LexendDeca-Regular"
      },
      heart:{
          fontSize: 30,
@@ -129,39 +135,43 @@ const styles = StyleSheet.create({
          alignItems: "center",
          borderWidth: 1,
          height: 28,
-         fontSize: 12
+         fontSize: 12,
      },
      heartContainer:{
          borderWidth: 1,
-         height: 28,
+         height: 31,
          justifyContent: "flex-end",
          flexDirection: "row",
          alignItems: "stretch",
          width: 100,   
      },
      heartContainerTwo:{
+         height: 31,
         display: "flex",
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "flex-end",
-        borderWidth: 1
+        alignItems: "center",
+        borderWidth: 1,
     },
      heartText: {
          fontSize: 12,
          display: "flex",
          alignItems: "center",
          justifyContent: "center",
-         color: "#9d7c08"
+         color: "#9d7c08",
+         fontFamily: "LexendDeca-Regular"
      },
- 
-     tinyLogo:{
+     tinyLogo: {
         borderWidth: 1,
-        width: 20,
-        height: 19,
+        width: 35,
+        height: 31,
         alignItems: "center",
       }
 })
 
+// ajustar el corazon
+// hacer responsive las imagenes
 
 export default ResultItems
 

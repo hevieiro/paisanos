@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
       borderColor: "black",
       marginBottom: 15,
       width: "100%",
-      borderBottomColor: "#000000"
+      borderBottomColor: "#0013"
     },
     inputTwo:{
       fontSize: 18,
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
       justifyContent: "space-between",
       width: "100%",     
       borderBottomWidth: 1,
-      borderBottomColor: "#000000",
+      borderBottomColor: "#0013",
       alignItems: "center",
     },
     label: {

@@ -37,9 +37,7 @@ const styles = StyleSheet.create({
         fontFamily: "LexendDeca-Regular",
         color: "#333333",
         marginBottom: 10
-        
     }
-
 })
 
 export default HeaerLoging

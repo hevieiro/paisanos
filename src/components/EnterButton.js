@@ -26,7 +26,6 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         marginTop: 82,
-
     },
     Text: {
         fontFamily: "LexendDeca-Regular",

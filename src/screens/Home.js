@@ -6,7 +6,6 @@ import ResultItems from '../components/ResultItems'
 
 const Home = ({navigation}) => {
     const [results, setResults] = useState([])
-
     useEffect(() => { 
         axios.get('https://vindu.paisanos.io/public-api/course')
           .then(response => {

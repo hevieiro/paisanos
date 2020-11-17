@@ -7,32 +7,32 @@ const InputForm = ({onNameChange, onPasswordChange, name, password}) => {
   const [ input , setInput] = useState(false)
 
     return (
-        <View style={styles.inputContainer}>
-          <View style={styles.viewLabel}> 
-            <Text style={styles.label}>Mail / Usuario</Text>
-          </View>
-            <TextInput
-                style={styles.inputOne}
-                placeholder="nombre@mail.com"
-                autoCapitalize="none"
-                autoCorrect={false}
-                value={name}
-                onChangeText={(newName) => onNameChange(newName)} 
+    <View style={styles.inputContainer}>
+      <View style={styles.viewLabel}> 
+        <Text style={styles.label}>Mail / Usuario</Text>
+      </View>
+        <TextInput
+          style={styles.inputOne}
+          placeholder="nombre@mail.com"
+          autoCapitalize="none"
+          autoCorrect={false}
+          value={name}
+          onChangeText={(newName) => onNameChange(newName)} 
+        />
+        <View style={styles.viewLabelTwo}> 
+          <Text style={styles.labelTwo}>Contraseña</Text>
+        </View>
+          <View style={styles.viewPassword}>
+            {!input ? <TextInput 
+              style={styles.inputTwo}
+              placeholder="*********"
+              autoCapitalize="none"
+              autoCorrect={false}
+              value={password}
+              onChangeText={(newPassword) => onPasswordChange(newPassword)} 
+              secureTextEntry={true}
             />
-          <View style={styles.viewLabelTwo}> 
-            <Text style={styles.labelTwo}>Contraseña</Text>
-          </View>
-            <View style={styles.viewPassword}>
-              {!input ? <TextInput 
-                style={styles.inputTwo}
-                placeholder="*********"
-                autoCapitalize="none"
-                autoCorrect={false}
-                value={password}
-                onChangeText={(newPassword) => onPasswordChange(newPassword)} 
-                secureTextEntry={true}
-            />
-              :               <TextInput 
+              : <TextInput 
               style={styles.inputTwo}
               placeholder="Contraseña"
               autoCapitalize="none"
@@ -40,9 +40,9 @@ const InputForm = ({onNameChange, onPasswordChange, name, password}) => {
               value={password}
               onChangeText={(newPassword) => onPasswordChange(newPassword)} 
               secureTextEntry={false}
-          />}          
-          <View style={styles.viewEye}>
-            <TouchableOpacity onPress={() => setInput(!input)} style={styles.Touchable}>
+            />}          
+            <View style={styles.viewEye}>
+              <TouchableOpacity onPress={() => setInput(!input)} style={styles.Touchable}>
                 {!input ? <Image
                   style={styles.tinyLogoClosed}
                   source={require('../public/closedEye.png')}
@@ -50,13 +50,12 @@ const InputForm = ({onNameChange, onPasswordChange, name, password}) => {
                 style={styles.tinyLogoOpened}
                 source={require('../public/openEye.png')}
               />}
-
               </TouchableOpacity>
-          </View>
+            </View>
           </View>
         </View>
       );
-}
+    }
 
 
 const styles = StyleSheet.create({
@@ -110,23 +109,31 @@ const styles = StyleSheet.create({
       alignItems: "center"
     },
     tinyLogoClosed:{
-      width: 22.7,
-      height: 16,
+      width: 20,
+      height: 15,
       alignItems: "center",
     },
     tinyLogoOpened:{
       borderWidth: 1,
-      width: 22.7,
-      height: 15.5,
+      width: 20,
+      height: 15,
       alignItems: "center",
+      marginLeft: 1
     },
     Touchable: {
       borderColor: "black", 
-      width: 22,
-      height: 15.5,
-      marginRight:10,
+      width: 20,
+      height: 15,
+      marginLeft: 1,
+      marginBottom: 2
     },
     viewEye: {
+      width: 23,
+      height: 17,
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      borderWidth: 1
     }
   });
 

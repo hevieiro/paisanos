@@ -22,12 +22,12 @@ const ResultItems = ({item}) => {
                                 <View style={styles.footerLevel}><Text style={styles.leveTimeText}>{item.level.name}</Text></View>
                             </TouchableOpacity>
                             <TouchableOpacity>                           
-                                <View style={styles.footerHour}><Text style={styles.leveTimeText}>asd</Text></View>
+                                <View style={styles.footerHour}><Text style={styles.leveTimeText}>2:00 hs</Text></View>
                             </TouchableOpacity>
                         </View>
                         <View style={styles.heartContainer}>
                             <View  style={styles.heartContainerTwo}>
-                                <TouchableOpacity>                              
+                                <TouchableOpacity style={styles.heartContainerTree}>                              
                                     <Image
                                         style={styles.tinyLogo}
                                         source={require('../public/heart.png')}/>
@@ -48,7 +48,6 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         marginStart: 17,
         borderRadius: 19,
-        backgroundColor: "white",
         backgroundColor: "#f8f9fb"
     },
     Container: {
@@ -63,7 +62,6 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
     category:{
-        borderWidth: 1,
         paddingTop: 10
     },
     textCategory:{
@@ -72,7 +70,6 @@ const styles = StyleSheet.create({
         fontFamily: "LexendDeca-Regular"
     },
     title:{
-        borderWidth: 1,
         paddingBottom: 8,
         paddingTop: 8,
         width: 350,
@@ -86,7 +83,6 @@ const styles = StyleSheet.create({
         fontFamily: "Vollkorn-Medium"
     },
     footerContainer:{
-        borderWidth: 1,
         borderRadius: 10,
         marginBottom: 10,
         display:"flex",
@@ -96,9 +92,7 @@ const styles = StyleSheet.create({
         
     },
     leveTimeButton: {
-        borderWidth: 1,
         display: "flex",
-        borderWidth: 1,
         flexDirection: "row",
         borderRadius:10,
         width: 250,
@@ -108,7 +102,6 @@ const styles = StyleSheet.create({
         width: 50,    
         height: 28,    
         borderRadius: 10,
-        borderWidth: 1,
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: "#eeece2",
@@ -117,7 +110,6 @@ const styles = StyleSheet.create({
          width: 50,    
          height: 28,    
          borderRadius: 10,
-         borderWidth: 1,
          justifyContent: "center",
          alignItems: "center",
          backgroundColor: "#eeece2"
@@ -125,22 +117,22 @@ const styles = StyleSheet.create({
      leveTimeText:{
         fontSize: 11,
         color: "#9d7c08",
-        fontFamily: "LexendDeca-Regular"
+        fontFamily: "LexendDeca-Regular",
+        paddingBottom: 4
      },
      heart:{
          fontSize: 30,
          justifyContent: "center",
          alignItems: "center",
-         borderWidth: 1,
          height: 28,
          fontSize: 12,
      },
      heartContainer:{
-         borderWidth: 1,
          height: 31,
          justifyContent: "flex-end",
          flexDirection: "row",
          alignItems: "stretch",
+
          width: 100,   
      },
      heartContainerTwo:{
@@ -150,7 +142,12 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "flex-end",
         alignItems: "center",
-        borderWidth: 1,
+    },
+    heartContainerTree:{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: 25
     },
      heartText: {
          fontSize: 12,
@@ -161,14 +158,13 @@ const styles = StyleSheet.create({
          fontFamily: "LexendDeca-Regular"
      },
      tinyLogo: {
-        borderWidth: 1,
         width: 35,
         height: 31,
-        alignItems: "center",
-      }
+        alignSelf: "center"      }
 })
 
 // ajustar el corazon
 // hacer responsive las imagenes
+// cambiar hora
 
 export default ResultItems
